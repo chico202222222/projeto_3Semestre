@@ -1,4 +1,5 @@
 import { validateCreateUser } from './createUserSchema.js'
+import { encryptAndSubmit } from './basicSecurity.js'
 
 const form = document.getElementById('registerForm')
 const errorMessage = document.getElementById('error')
@@ -16,6 +17,8 @@ form.addEventListener('submit', function (event) {
 
   if (result.success) {
     errorMessage.textContent = ''
+    event.preventDefault()
+    encryptAndSubmit(form)
     return
   }
 

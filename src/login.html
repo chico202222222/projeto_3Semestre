@@ -14,14 +14,16 @@
     {% with messages = get_flashed_messages() %}{% if messages %}
       <p class="message" role="alert">{{ messages[0] }}</p>
     {% endif %}{% endwith %}
-    <form action="/login" method="post">
+    <form action="/login" method="post" id="loginForm">
       <label for="email">E-mail</label>
       <input id="email" name="email" type="email" autocomplete="email" required>
       <label for="password">Senha</label>
       <input id="password" name="password" type="password" autocomplete="current-password" required>
+      <p id="error" class="message" role="alert" aria-live="polite"></p>
       <button type="submit">Entrar</button>
     </form>
     <p class="footer">Não tem uma conta? <a href="/register">Criar conta</a></p>
   </main>
+  <script type="module" src="/assets/js/basicSecurity.js"></script>
 </body>
 </html>
