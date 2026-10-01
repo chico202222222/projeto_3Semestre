@@ -1,8 +1,0 @@
-- generic [ref=e3]:
-  - generic [ref=e4]:
-    - textbox "Username" [ref=e5]: valid-user
-    - textbox "Email" [ref=e6]: user@example.com
-    - textbox "Password" [ref=e7]: <script>alert(1)</script>Aa1
-    - button "Register" [active] [ref=e8]
-  - alert
-  - paragraph [ref=e9]: "Registered user #1"
