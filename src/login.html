@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Entrar · TDE3</title>
-  <link rel="stylesheet" href="/assets/css/global.css">
+  <title>Entrar:</title>
+  <link rel="stylesheet" href="css/global.css">
 </head>
 <body>
   <main class="auth">
-    <a class="brand" href="/login">TDE3</a>
+    <a class="brand" href="/login">Monitor IoT</a>
+    <p class="chillMessage">Instituto Bukokaesen Model. 2026</p>
     <h1>Entrar</h1>
     <p>Acesse sua conta com e-mail e senha.</p>
-    {% with messages = get_flashed_messages() %}{% if messages %}
-      <p class="message" role="alert">{{ messages[0] }}</p>
-    {% endif %}{% endwith %}
+    <p id="flashMessage" class="message" role="alert"></p>
     <form action="/login" method="post" id="loginForm">
       <label for="email">E-mail</label>
       <input id="email" name="email" type="email" autocomplete="email" required>
@@ -24,6 +23,6 @@
     </form>
     <p class="footer">Não tem uma conta? <a href="/register">Criar conta</a></p>
   </main>
-  <script type="module" src="/assets/js/basicSecurity.js"></script>
+  <script type="module" src="js/basicSecurity.js"></script>
 </body>
 </html>

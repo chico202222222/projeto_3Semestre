@@ -12,7 +12,7 @@ from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import padding, rsa
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 from flask import (
-    Flask, flash, jsonify, redirect, render_template, request,
+    Flask, flash, get_flashed_messages, jsonify, redirect, render_template, request,
     send_from_directory, session, url_for,
 )
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -46,11 +46,13 @@ def connect_db():
 
 
 @app.get('/assets/css/<path:filename>')
+@app.get('/css/<path:filename>')
 def css_file(filename):
     return send_from_directory(ROOT / 'css', filename)
 
 
-@app.get('/assets/js/<path:filename>') #<path:filename> é uma 'variavel'
+@app.get('/assets/js/<path:filename>')
+@app.get('/js/<path:filename>')
 def js_file(filename):
     return send_from_directory(ROOT / 'js', filename)
 
@@ -97,7 +99,29 @@ def home():
         session.clear()
         return redirect(url_for('login'))
 
-    return render_template('home.html', name=user['name'])
+    return render_template('home.html')
+
+
+@app.get('/api/user')
+def get_user():
+    user_id = session.get('user_id')
+    if user_id is None:
+        return jsonify({'error': 'Não autenticado'}), 401
+
+    with closing(connect_db()) as connection:
+        user = connection.execute(
+            'SELECT name FROM users WHERE id = ?', (user_id,)
+        ).fetchone()
+
+    if user is None:
+        return jsonify({'error': 'Usuário não encontrado'}), 401
+
+    return jsonify({'name': user['name']})
+
+
+@app.get('/api/messages')
+def get_messages():
+    return jsonify(get_flashed_messages())
 
 
 @app.route('/login', methods=['GET', 'POST'])
