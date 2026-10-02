@@ -1,8 +1,8 @@
 # projeto_3Semestre
 
-## Experiencia Criativa
+## Experiencia Criativa: Criando Soluções Computacionais
 
-Esse projeto é um projeto da faculdade PUCPR, curso de Ciência da Computação, desenvolvido pelos alunos Francisco Medeiros.
+Esse projeto é um projeto da faculdade PUCPR, curso de Ciência da Computação, desenvolvido pelos alunos Francisco Medeiros, Mateus de Brito Gomes, Júlio Cesar Stein e Thiago Oliveira Fernandes.
 <br>
 É basicamente um CRUD, integrado com uma API que contém informações de um dispositivo IOT.
 
