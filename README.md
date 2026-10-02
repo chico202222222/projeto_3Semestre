@@ -26,6 +26,10 @@ source .venv/bin/activate
 pip install -r requirements.txt 
 ```
 
+# **USO DE IA** :
+
+Como autor do repositorio declaro que NAO ha uso de I.A. generativa, a IA generativa foi usada **APENAS** com o propósito de ajudar a escrever documentacoes locais para auxiliar na hora do desenvolvimento.
+
 e pronto, seu servidor está praticamnete pronto. agora pra rodar só basta:
 
 ```bash
