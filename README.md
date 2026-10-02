@@ -1,5 +1,9 @@
 # projeto_3Semestre
 
+# ** PROJETO ** :
+
+O projeto se consiste em um monitor de IoT, feito em flask, integrado com um sistema embarcado real.
+
 ## Experiencia Criativa: Criando Soluções Computacionais
 
 Esse projeto é um projeto da faculdade PUCPR, curso de Ciência da Computação, desenvolvido pelos alunos Francisco Medeiros, Mateus de Brito Gomes, Júlio Cesar Stein e Thiago Oliveira Fernandes.
